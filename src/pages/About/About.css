@@ -1,0 +1,243 @@
+.about-canvas-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 10;
+  overflow-y: hidden;
+}
+
+.react-three-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: hidden;
+}
+
+.about-me-card {
+  flex-shrink: 0;
+  border-radius: 20px;
+  border: 1px solid #73b1ff;
+  z-index: 100;
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(149, 193, 255, 0.8) 0%,
+    rgba(202, 223, 255, 0.8) 100%
+  );
+  backdrop-filter: blur(35px);
+  
+  padding: 5% 10%;
+  z-index: 10;
+  overflow-y: hidden;
+}
+
+.about-me-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0 auto;
+}
+
+.about-me-title {
+  color: #1d2235;
+  font-size: 36px;
+  font-family: Manrope;
+  font-style: normal;
+  font-weight: 800;
+  margin-bottom: 40px;
+}
+
+.about-me-profile-section {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.about-me-profile-picture {
+  width: 200px;
+  height: 200px;
+  flex-shrink: 0;
+  margin-right: 30px;
+  border-radius: 50%;
+  background: lightgray 50% / cover no-repeat;
+}
+
+.about-me-greetings {
+  font-size: 32px;
+  font-family: Manrope;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.about-me-greetings .about-me-hi {
+  color: #363f62;
+  display: block;
+}
+
+.about-me-greetings .about-me-name {
+  color: #406aff;
+  font-weight: bold;
+}
+
+.about-me-vector-image {
+  width: 170px;
+  height: 90px;
+}
+
+.about-me-description {
+  color: #303750;
+  font-size: 18px;
+  font-family: Manrope;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.skills-title {
+  color: #1d2235;
+  font-size: 28px;
+  font-family: Manrope;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.skills-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.skill-circle-wrapper {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+
+.skill-circle {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: #f6f6f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.skill-icon {
+  width: 50px;
+  height: 50px;
+}
+
+@media screen and (max-width: 768px) {
+  .about-me-card {
+    padding: 5% 5%;
+  }
+
+  .about-me-title {
+    font-size: 28px;
+  }
+
+  .about-me-profile-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-me-profile-picture {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 24px;
+  }
+
+  .about-me-greetings {
+    font-size: 24px;
+  }
+
+  .about-me-vector-image {
+    width: 130px;
+    height: 70px;
+  }
+
+  .about-me-description {
+    font-size: 16px;
+  }
+
+  .skills-title {
+    font-size: 20px;
+  }
+
+  .skill-circle-wrapper {
+    width: 80px;
+    height: 80px;
+  }
+
+  .skill-circle {
+    width: 70px;
+    height: 70px;
+  }
+
+  .skill-icon {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .about-me-card {
+    padding: 5% 5%;
+  }
+
+  .about-me-title {
+    font-size: 24px;
+  }
+
+  .about-me-profile-picture {
+    width: 120px;
+    height: 120px;
+  }
+
+  .about-me-greetings {
+    font-size: 20px;
+  }
+
+  .about-me-vector-image {
+    width: 100px;
+    height: 50px;
+  }
+
+  .about-me-description {
+    font-size: 14px;
+  }
+
+  .skills-title {
+    font-size: 16px;
+  }
+
+  .skill-circle-wrapper {
+    width: 60px;
+    height: 60px;
+  }
+
+  .skill-circle {
+    width: 50px;
+    height: 50px;
+  }
+
+  .skill-icon {
+    width: 25px;
+    height: 25px;
+  }
+}

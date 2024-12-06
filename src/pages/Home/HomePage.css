@@ -1,0 +1,61 @@
+.root{
+  color: #2596be
+
+}
+
+.homepage_container {
+    min-width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+  }
+
+  .lottie-container {
+    z-index: 10;
+    pointer-events: none;
+    width: 50%;
+    height: 70%;
+    position: absolute;
+    top: 20%; 
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  
+  @media (max-width: 768px) {
+    .lottie-container {
+      width: 80%; 
+      height: 80%;
+      top: 48%; 
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .lottie-container {
+      width: 40%; 
+      height: 40%;
+      top: 39%; 
+    }
+  }
+  
+  @media (min-width: 1600px) {
+    .lottie-container {
+      width: 30%; 
+      height: 30%;
+      top: 46%; 
+    }
+  }
+  
+  
+  .lottie-text {
+    margin-top: -145px; 
+    font-size: 13px;
+    color: #ffffff; 
+  }
+
+  .body{
+    color:#2596be
+  }
