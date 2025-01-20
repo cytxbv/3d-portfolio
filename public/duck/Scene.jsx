@@ -32,7 +32,7 @@ export function Duck(props) {
     const targetFOV = 55;
   
     // Camera movement duration
-    const duration = 1000; // 1 second for camera movement
+    const duration = 2000; // 1 second for camera movement
     let startTime = null;
   
     // Animation function for smooth camera movement
