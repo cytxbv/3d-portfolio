@@ -50,7 +50,7 @@ export function FlyingRobot(props) {
 
     // Navigate after animation
     setTimeout(() => {
-      navigate('/projects');
+      navigate('/experience');
     }, 2000);
   };
 
