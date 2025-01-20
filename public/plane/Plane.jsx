@@ -21,7 +21,7 @@ export function Plane(props) {
     }
   }, [actions]);
 
-  // sphere animation
+  // sphere hover effect 
   useFrame(() => {
     const scale = 0.4 + Math.sin(Date.now() * 0.005) * 0.01;
     if (sphereRef.current) {
@@ -29,17 +29,18 @@ export function Plane(props) {
     }
   });
 
+  // clicking the plane or sphere
   const handleClick = () => {
-    // get plane position
+    //plane position
     const planePosition = new Vector3();
     group.current.getWorldPosition(planePosition);
 
-    // adjust planePosition
-    planePosition.x += -100; 
-    planePosition.y += 150;  
-    planePosition.z += 150; 
+    //position for camera animation
+    planePosition.x += -100;
+    planePosition.y += 150;
+    planePosition.z += 150;
 
-    // animate camera to move to the plane's position
+    //camera movement
     const duration = 200;
     let startTime = null;
 
@@ -58,6 +59,7 @@ export function Plane(props) {
 
     requestAnimationFrame(animateCamera);
 
+    // navigate after animation
     setTimeout(() => {
       navigate('/projects');
     }, 2000);
@@ -69,15 +71,15 @@ export function Plane(props) {
       {...props} 
       dispose={null} 
       rotation={[0, Math.PI / 3, 0]} 
-      onClick={handleClick} // Handle onClick for the entire plane
+      onClick={handleClick} // clicks for the entire plane
     >
       <group name="Scene">
-        <group name="Cylinder" position={[0, 8.09, 0]} rotation={[Math.PI / 2, 0, 0]} >
+        <group name="Cylinder" position={[0, 8.09, 0]} rotation={[Math.PI / 2, 0, 0]}>
           <mesh name="Cylinder_1" geometry={nodes.Cylinder_1.geometry} material={materials['Material.001']} scale={[1, 3.441, 1]} />
           <mesh name="Cylinder_2" geometry={nodes.Cylinder_2.geometry} material={materials['Material.002']} scale={[1, 3.441, 1]} />
           <mesh name="Cylinder_3" geometry={nodes.Cylinder_3.geometry} material={materials['Material.003']} scale={[1, 3.441, 1]} />
 
-          {/* Sphere Component */}
+          {/* sphere component */}
           <mesh
             ref={sphereRef}
             scale={[1, 1, 1]}

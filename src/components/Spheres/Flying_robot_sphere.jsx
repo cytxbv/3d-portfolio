@@ -40,7 +40,7 @@ const FlyingRobotSphere = (props) => {
         camera.lookAt(robotPosition);
       },
       onComplete: () => {
-        navigate('/contact'); // Navigate to /contact after animation
+        navigate('/experience'); // Navigate to /contact after animation
       },
     });
   };

@@ -2,7 +2,7 @@ body {
   align-items: flex-start;
   display: flex;
   justify-content: flex-end;
-  height: 100vh;
+  height: 50vh;
   margin: 0;
   padding: 20px;
 }

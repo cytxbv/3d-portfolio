@@ -18,13 +18,14 @@ import { Plane } from "../../../public/plane/Plane";
 import { Car } from "../../../public/car/Scene";
 import { Duck } from "../../../public/duck/Scene"
 import DuckSphere  from "../../components/Spheres/DuckSphere";
+import AnimatedText from "../../../src/assets/AnimatedText/AnimatedText";
 
 
 const HomePage = () => {
   const [isPlaying, setIsPlaying] = useState(false);  // audio playing
   const audioRef = useRef(null);
-  const [showLottie, setShowLottie] = useState(true); // lottie animation drag visibility
-  const [currentStage, setCurrentStage] = useState(1); // set portfolio stages
+  const [showLottie, setShowLottie] = useState(true); //  animation drag visibility
+  const [currentStage, setCurrentStage] = useState(0);
 
   const defaultOptions = {
     loop: true,
@@ -61,9 +62,9 @@ const HomePage = () => {
   }, [isPlaying]);
 
   const handleUserDrag = () => {
-    setShowLottie(false); // hide Lottie animation on drag
+    setShowLottie(false); //hide explore animation on drag
   };
-
+  
   const handleSphereClick = () => {
     console.log('sphere clicked');
   };
@@ -77,6 +78,7 @@ const HomePage = () => {
       <audio ref={audioRef} src={mediaPlayer.musicPath} autoPlay />
 
       <div className="homepage_container">
+      
         <div className="info_container">
           {/* <InfoSection currentStage={currentStage} /> */}
         </div>
@@ -91,6 +93,10 @@ const HomePage = () => {
             <p className="lottie-text">DRAG TO EXPLORE</p>
           </div>
         )}
+        <div className = "animatedTextcontainer">
+        <AnimatedText />
+        </div>
+        
 
         <PlayButton isPlaying={isPlaying} setIsPlaying={setIsPlaying} />
 
@@ -119,11 +125,11 @@ const HomePage = () => {
           />
 
           <Stegosaurs position={[95, -55, -2]} scale={[13, 13, 13]} />
-          <StegosaursSphere
+          {/* <StegosaursSphere
             position={[95, -10, -2]}
             onClick={handleSphereClick}
             onHover={handleSphereHover}
-          />
+          /> */}
 
           <Plane position={[-80, 40, 100]} scale={[8, 8, 8]} />
           

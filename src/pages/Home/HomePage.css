@@ -24,6 +24,17 @@
     transform: translateX(-50%);
   }
 
+  .animatedTextcontainer{
+    z-index: 10;
+    pointer-events: none;
+    width: 50%;
+    height: 70%;
+    position: absolute;
+    top: 13%; 
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
   
   @media (max-width: 768px) {
     .lottie-container {

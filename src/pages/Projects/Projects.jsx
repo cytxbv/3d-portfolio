@@ -1,88 +1,81 @@
 import React from "react";
 import "./Projects.css";
+import TrekAlert from "../../../public/trekalert6.png";
+import StreamWave from "../../../public/streamWave4.png";
+import Image2Latex from "../../../public/image2latex2.png";
+import BackButton from "../../../src/assets/BackButton/BackButton";
 
 const Projects = () => {
   const projectData = [
     {
-      
-      title: "Car Showcase App",
-      tech: ["React", "Node", "Express", "MongoDB"],
+      title: "TrekAlert",
+      imgSrc: TrekAlert, 
+      tags: ["Figma"],
+      liveDemoLink: "#",
     },
     {
-      
-      title: "E-Commerce App",
-      tech: ["React", "Node", "Express", "MongoDB"],
+      title: "Stream Wave",
+      imgSrc: StreamWave,
+      tags: ["Flutter", "Firebase"],
     },
     {
-      
-      title: "E-Commerce App",
-      tech: ["React", "Node", "Express", "MongoDB"],
-    },
-    {
-      
-      title: "E-Commerce App",
-      tech: ["React", "Node", "Express", "MongoDB"],
-    },
-    {
-      
-      title: "E-Commerce App",
-      tech: ["React", "Node", "Express", "MongoDB"],
-    },
-    {
-      
-      title: "E-Commerce App",
-      tech: ["React", "Node", "Express", "MongoDB"],
+      title: "Image To LaTEX",
+      imgSrc: Image2Latex,
+      tags: ["YOLO", "Kaggle"],
+      githubLink: "https://github.com/cytxbv/Image-to-LaTeX.git", 
     },
   ];
 
   return (
-    <div className="project-card-container">
-      <h1 className="page-title">My Favorite Projects</h1>
-      <ul className="cards">
+    <div className="projects-container">
+      <BackButton />
+      <h1 className="projects-title">Browse My Recent Projects</h1>
+      <div className="projects-grid">
         {projectData.map((project, index) => (
-          <>
-            <li>
-              <div className="card">
-                <img src={project.imgSrc} className="card__image" alt="" />
-                <div className="card__overlay">
-                  <div className="card__header">
-                    <svg
-                      className="card__arc"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path />
-                    </svg>
-                    <img
-                      className="card__thumb"
-                      src={project.thumbSrc}
-                      alt=""
-                    />
-                    <div className="card__header-text">
-                      <h3 className="card__title">{project.title}</h3>
-                      <div className="tech-used">
-                        {project.tech.map((tech, index) => (
-                          <span className="tech" key={index}>
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                  <div className="buttons">
-                    
-                      
-                      Link
-                    
-                    
-                    
-                    
-                  </div>
+          <div className="project-card" key={index}>
+            <img
+              src={project.imgSrc}
+              alt={project.title}
+              className="project-image"
+            />
+            <div className="project-details">
+              <div className="details-left">
+                <h2 className="project-title">{project.title}</h2>
+                <div className="tags">
+                  {project.tags &&
+                    project.tags.map((tag, index) => (
+                      <span key={index} className="tag">
+                        {tag}
+                      </span>
+                    ))}
                 </div>
               </div>
-            </li>
-          </>
+              <div className="details-right">
+                {project.liveDemoLink && (
+                  <a
+                    href={project.liveDemoLink}
+                    className="project-button"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Live Demo
+                  </a>
+                )}
+                {project.githubLink && (
+                  <a
+                    href={project.githubLink}
+                    className="project-button"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    GitHub
+                  </a>
+                )}
+              </div>
+            </div>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };

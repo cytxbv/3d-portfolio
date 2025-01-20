@@ -33,8 +33,8 @@ const Navbar = () => {
       {isMenuOpen && (
         <div className="menu-items">
           <a href="/about">About Me</a>
+          <a href="/experience">Experiences</a>
           <a href="/projects">My Projects</a>
-          <a href="/contact">Get in Touch</a>
         </div>
       )}
     </div>
