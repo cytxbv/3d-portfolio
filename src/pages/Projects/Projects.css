@@ -32,6 +32,8 @@
   padding: 2%;
   text-align: left; /* Align title to the left */
   margin-bottom: 2rem;
+  margin-top: 1%;
+  text-align: center;
 }
 
 .projects-grid {

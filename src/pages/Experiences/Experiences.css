@@ -19,14 +19,11 @@ body {
 .experience-title {
   font-size: 2.5rem;
   font-weight: bold;
-  top: 50px;
-  height: 30%;
   color: #FFF;
-  padding: 0%;
-  top: 50px;
-  justify-content: flex-start;
-  margin-top: 0%;
-  margin-bottom: -8%;
+  padding: 2%;
+  text-align: center; /* Align title to the left */
+  margin-bottom: 2rem;
+  margin-top: -5.3%;
 }
 
 .experiences{
