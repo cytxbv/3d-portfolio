@@ -11,7 +11,7 @@ const Projects = () => {
       title: "TrekAlert",
       imgSrc: TrekAlert, 
       tags: ["Figma"],
-      liveDemoLink: "#",
+      liveDemoLink: "https://www.figma.com/proto/OOFWMQnjmKUi2Gaol3oUVW/Hi-Fi-Prototype?page-id=0%3A1&node-id=73-136&node-type=frame&viewport=604%2C793%2C0.67&t=DCPgBevLEDIIMxTB-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=73%3A136&show-proto-sidebar=1",
     },
     {
       title: "Stream Wave",
