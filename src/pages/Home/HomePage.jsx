@@ -145,8 +145,6 @@ const HomePage = () => {
 
           
           <OrbitControls />
-
-          <axesHelper args={[5]} />
         </Canvas>
       </div>
     </>
