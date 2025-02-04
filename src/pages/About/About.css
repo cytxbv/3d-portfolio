@@ -100,6 +100,7 @@
     align-items: center; /* Center everything */
     text-align: center; 
     gap:20px;
+    overflow: auto;
   }
   .about__profile-picture{
     width: 200px;
