@@ -70,3 +70,10 @@
   .body{
     color:#2596be
   }
+
+  @media (max-width: 768px) {
+    .lottie-container {
+      top: 38%;
+    }
+  }
+  

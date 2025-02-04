@@ -29,7 +29,7 @@ const Projects = () => {
   return (
     <div className="projects-container">
       <BackButton />
-      <h1 className="projects-title">Browse My Recent Projects</h1>
+      <div className="projects-title">Browse My Recent Projects</div>
       <div className="projects-grid">
         {projectData.map((project, index) => (
           <div className="project-card" key={index}>

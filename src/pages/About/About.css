@@ -94,3 +94,15 @@
   color: #68e096;
 }
 
+@media (max-width: 768px) {
+  .about__container {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center everything */
+    text-align: center; 
+    gap:20px;
+  }
+  .about__profile-picture{
+    width: 200px;
+    height: 200px; /* Make it larger for mobile */
+  }
+}
