@@ -9,7 +9,11 @@ const About = () => {
       <BackButton />
       <div className="about__container">
 
-        <div className="about__profile-picture"></div>
+        <div className="about__profile-picture">
+        <img src="/portfolio_photo.jpg" alt="Profile" className="about__profile-picture" />
+        </div>
+        
+
 
         <div className="about__text">
           <h1>

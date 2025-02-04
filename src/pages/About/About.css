@@ -19,20 +19,20 @@
   align-items: center;
   max-width: 900px;
   padding: 25px;
-  gap: 20px;
+  gap: 50px;
   height: 500px;
 }
 
 
 .about__profile-picture {
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
   background-color: #e0e0e0;
-  background-image: url('your-profile-image.jpg'); /* Replace with actual image path */
   background-size: cover;
   background-position: center;
-  border: 2px solid #ccc;
+  border: 1px solid #ccc;
+  object-fit: cover; 
 }
 
 
