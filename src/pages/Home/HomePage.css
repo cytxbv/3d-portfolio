@@ -73,7 +73,12 @@
 
   @media (max-width: 768px) {
     .lottie-container {
-      top: 38%;
+      top: 33%;
+      left:38%;
+    }
+    .lottie-text{
+      margin-left:27%;
+      
     }
   }
   
