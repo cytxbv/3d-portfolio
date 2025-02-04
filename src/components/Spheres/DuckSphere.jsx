@@ -21,18 +21,18 @@ const DuckSphere = (props) => {
         const cameraPosition = duckPosition.clone().add(duckFrontOffset);
 
         // Set the target FOV for zoom
-        const targetFOV = 55; // Same as the Duck component's FOV
-        const originalFOV = camera.fov; // Save the original FOV
+        const targetFOV = 55; 
+        const originalFOV = camera.fov; 
 
         // Smoothly move the camera to the new position and zoom in
         gsap.to(camera.position, {
             x: cameraPosition.x,
             y: cameraPosition.y,
             z: cameraPosition.z,
-            duration: 1, // Move camera in 1 second, same as Duck component
+            duration: 1, 
             onUpdate: () => camera.updateProjectionMatrix(),
             onComplete: () => {
-                navigate('/about'); // Navigate to /about after camera movement animation
+                navigate('/about'); 
             }
         });
 

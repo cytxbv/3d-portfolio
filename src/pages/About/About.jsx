@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import './About.css';
-import BackButton from "../../../src/assets/BackButton/BackButton"
+import BackButton from "../../../src/assets/BackButton/BackButton";
 
 const About = () => {
   return (
@@ -11,20 +11,21 @@ const About = () => {
 
         <div className="about__profile-picture"></div>
 
-
         <div className="about__text">
           <h1>
             Hi, I am <span className="about__name">Yu Tung Chen.</span>
           </h1>
           <h2 className="about__role">A Front End Engineer.</h2>
           <p className="about__desc">
-          Enthusiastic and motivated learner seeking to expand her knowledge. Eager to contribute through hard work,
-          attention to details and people skills. Clear understanding of tasks at hand and a fast learner.
+            Enthusiastic and motivated learner seeking to expand her knowledge. 
+            Eager to contribute through hard work, attention to details and people skills. 
+            Clear understanding of tasks at hand and a fast learner.
           </p>
 
           <div className="about__contact">
+
             <a 
-              href="https://example.com" 
+              href="/Yu_Tung_Chen_2025.pdf" 
               target="_blank" 
               rel="noopener noreferrer"
               className="btn btn--outline"
@@ -43,7 +44,7 @@ const About = () => {
                 <FaGithub />
               </a>
               <a 
-                href="https://linkedin.com" 
+                href="https://www.linkedin.com/in/yu-tung-chen-ba95b022a/" 
                 aria-label="LinkedIn" 
                 className="link link--icon"
                 target="_blank" 
@@ -52,6 +53,7 @@ const About = () => {
                 <FaLinkedin />
               </a>
             </div>
+
           </div>
         </div>
       </div>
