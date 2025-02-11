@@ -1,8 +1,4 @@
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
+
 
 
 .app {
@@ -16,20 +12,37 @@ html, body {
   background-color: #4a90e2;
   
 }
+/* Customizing the scrollbar */
+.experiences::-webkit-scrollbar {
+  width: 8px;
+}
 
+.experiences::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.experiences::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 10px;
+}
+
+.experiences::-webkit-scrollbar-thumb:hover {
+  background: transparent;
+}
 .experience-title {
   font-size: 2.5rem;
   font-weight: bold;
   color: #FFF;
   padding: 2%;
-  text-align: center; /* Align title to the left */
+  text-align: left; /* Align title to the left */
   margin-bottom: 2rem;
-  margin-top: -5.3%;
+  margin-top: 1%;
+  text-align: center;
 }
 
 .experiences{
   width: 88%;
-  height: 80%;
+  height: 85%;
   overflow: auto;
   
 }
