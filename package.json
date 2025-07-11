@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@react-spring/three": "^9.7.4",
-    "@react-three/drei": "^9.109.2",
+    "@react-three/drei": "^9.122.0",
     "@react-three/fiber": "^8.17.7",
     "camera-controls": "^2.9.0",
     "dat.gui": "^0.7.9",

@@ -4,6 +4,7 @@ import { useGLTF, useAnimations } from '@react-three/drei';
 import { useNavigate } from 'react-router-dom';
 import { Vector3 } from 'three';
 import PlanePath from "./plane-transformed.glb";
+import { Html } from '@react-three/drei';
 
 export function Plane(props) {
   const group = useRef();
@@ -13,6 +14,7 @@ export function Plane(props) {
   const { camera } = useThree();
   const navigate = useNavigate();
   const [hovered, setHovered] = useState(false);
+
 
   // plane animation
   useEffect(() => {
@@ -66,13 +68,16 @@ export function Plane(props) {
   };
 
   return (
-    <group 
-      ref={group} 
-      {...props} 
-      dispose={null} 
-      rotation={[0, Math.PI / 3, 0]} 
-      onClick={handleClick} // clicks for the entire plane
-    >
+      <group 
+        ref={group} 
+        {...props} 
+        dispose={null} 
+        rotation={[0, Math.PI / 3, 0]} 
+        onClick={handleClick}
+        onPointerOver={() => setHovered(true)}
+        onPointerOut={() => setHovered(false)}
+      >
+
       <group name="Scene">
         <group name="Cylinder" position={[0, 8.09, 0]} rotation={[Math.PI / 2, 0, 0]}>
           <mesh name="Cylinder_1" geometry={nodes.Cylinder_1.geometry} material={materials['Material.001']} scale={[1, 3.441, 1]} />
@@ -89,14 +94,34 @@ export function Plane(props) {
           >
             <sphereGeometry args={[1.8, 32, 32]} />
             <meshStandardMaterial color={hovered ? "#08edde" : "#00ff00"} />
+            {hovered && (
+            <Html
+              position={[-12, 10, -6]} // Adjust position as needed
+              center
+              
+              style={{
+                fontSize: '16px',
+                color: 'white',
+                padding: '4px 8px',
+                borderRadius: '15px',
+                whiteSpace: 'nowrap'
+              }}
+            >
+              My Projects
+            </Html>
+          )}
           </mesh>
+                    
 
           <group name="Cylinder001" position={[0, 1.129, 0.008]} scale={0.851}>
             <mesh name="Cylinder001_1" geometry={nodes.Cylinder001_1.geometry} material={materials['Material.003']} />
             <mesh name="Cylinder001_2" geometry={nodes.Cylinder001_2.geometry} material={materials['Material.004']} />
           </group>
+
         </group>
       </group>
+      
+
     </group>
   );
 }

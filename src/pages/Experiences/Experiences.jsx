@@ -5,7 +5,7 @@ import BackButton from "../../../src/assets/BackButton/BackButton"
 const ExperienceCard = ({ dateRange, title, company, description, tags, links }) => {
   return (
     <div className="experience-card">
-      <BackButton />
+      
       <div className="experience-card__columns">
         <div className="date-range">{dateRange}</div>
         <div className="details">

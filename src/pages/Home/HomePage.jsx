@@ -21,6 +21,7 @@ import DuckSphere  from "../../components/Spheres/DuckSphere";
 import AnimatedText from "../../../src/assets/AnimatedText/AnimatedText";
 
 
+
 const HomePage = () => {
   const [isPlaying, setIsPlaying] = useState(false);  // audio playing
   const audioRef = useRef(null);
@@ -75,6 +76,7 @@ const HomePage = () => {
 
   return (
     <>
+        {/* <TopNav></TopNav> */}
       <audio ref={audioRef} src={mediaPlayer.musicPath} autoPlay />
 
       <div className="homepage_container">
@@ -117,7 +119,8 @@ const HomePage = () => {
             setCurrentStage={setCurrentStage}
           />
 
-          <FlyingRobot position={[140, 80, 50]} scale={[25, 25, 25]} />
+          <FlyingRobot position={[140, 80, 50]} scale={[25, 25, 25]} 
+          onHover={handleSphereHover}/>
           <FlyingRobotSphere
             position={[145, 110, 50]}
             onClick={handleSphereClick}

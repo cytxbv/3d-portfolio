@@ -6,7 +6,7 @@ import BackButton from "../../../src/assets/BackButton/BackButton";
 const About = () => {
   return (
     <div className="about__center">
-      <BackButton />
+      
       <div className="about__container">
 
         <div className="about__profile-picture">

@@ -7,11 +7,12 @@ import About from "../../pages/About/About";
 import Projects from "../../pages/Projects/Projects";
 import Experiences from"../../pages/Experiences/Experiences";
 import "./App.css";
+import TopNav from "../../assets/TopNav/TopNav";
 
 function App() {
   return (
     <Router>
-      <Navbar />
+      <TopNav />
       <Routes>
         <Route path="/about" element={<About />} />
         <Route path="/projects" element={<Projects />} />

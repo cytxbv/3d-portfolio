@@ -16,7 +16,8 @@ const Projects = () => {
     {
       title: "Stream Wave",
       imgSrc: StreamWave,
-      tags: ["Flutter", "Firebase"],
+      tags: ["Android Studio", "Firebase"],
+      videoDemoLink: "https://youtu.be/lxNMide6MW4",
     },
     {
       title: "Image To LaTEX",
@@ -28,7 +29,7 @@ const Projects = () => {
 
   return (
     <div className="projects-container">
-      <BackButton />
+      
       <div className="projects-title">Browse My Recent Projects</div>
       <div className="projects-grid">
         {projectData.map((project, index) => (
@@ -58,7 +59,17 @@ const Projects = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Live Demo
+                    Figma Demo
+                  </a>
+                )}
+                {project.videoDemoLink && (
+                  <a
+                    href={project.videoDemoLink}
+                    className="project-button"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Video Demo
                   </a>
                 )}
                 {project.githubLink && (

@@ -1,15 +1,18 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { useFrame, useThree } from '@react-three/fiber';
 import { useGLTF } from '@react-three/drei';
 import { useNavigate } from 'react-router-dom';
 import { Vector3 } from 'three';
 import RobotPath from "./scene-transformed.glb";
+import { Html } from '@react-three/drei';
 
 export function FlyingRobot(props) {
   const { nodes, materials } = useGLTF(RobotPath);
   const groupRef = useRef();
   const { camera } = useThree();
   const navigate = useNavigate();
+  const [hovered, setHovered] = useState(false);
+
 
   // Pulsing effect
   useFrame(() => {
@@ -55,19 +58,39 @@ export function FlyingRobot(props) {
   };
 
   return (
-    <group 
-      ref={groupRef} 
-      {...props} 
-      dispose={null} 
-      rotation={[Math.PI / 8, Math.PI / 2 - Math.PI / 11, -Math.PI / 8]} 
-      onClick={handleClick} 
+    <group
+      ref={groupRef}
+      {...props}
+      dispose={null}
+      rotation={[Math.PI / 8, Math.PI / 2 - Math.PI / 11, -Math.PI / 8]}
+      onClick={handleClick}
+      onPointerOver={() => setHovered(true)}
+      onPointerOut={() => setHovered(false)}
     >
+      
+
+
       <lineSegments geometry={nodes.Object_2.geometry} material={materials['Material.002']} rotation={[-Math.PI / 2, 0, 0]} />
+            
+      {hovered && (
+        <Html
+          position={[0, 1.55, 0]} 
+          center
+          style={{
+            fontSize: '16px',
+            color: 'white',
+            padding: '4px 8px',
+            borderRadius: '15px',
+            whiteSpace: 'nowrap'
+          }}
+        >
+         My Experiences
+        </Html>
+      )}
       <mesh geometry={nodes.Object_3.geometry} material={materials['Material.001']} rotation={[-Math.PI / 2, 0, 0]} />
       <mesh geometry={nodes.Object_4.geometry} material={materials['Material.002']} rotation={[-Math.PI / 2, 0, 0]} />
       <mesh geometry={nodes.Object_12.geometry} material={materials['Material.003']} rotation={[-Math.PI / 2, 0, 0]} />
     </group>
   );
 }
-
 useGLTF.preload(RobotPath);

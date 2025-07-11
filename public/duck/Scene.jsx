@@ -1,18 +1,20 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useGLTF, useAnimations } from "@react-three/drei";
 import { useThree } from "@react-three/fiber";
 import { gsap } from "gsap";
 import DuckPath from "./scene-transformed.glb";
 import DuckSphere from "../../src/components/Spheres/DuckSphere"; 
 import * as THREE from "three";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { useNavigate } from "react-router-dom"; 
+import { Html } from '@react-three/drei';
 
 export function Duck(props) {
-  const group = useRef(); // Reference to the duck model
-  const { camera } = useThree(); // Access the Three.js camera
+  const group = useRef(); 
+  const { camera } = useThree(); 
   const { nodes, materials, animations } = useGLTF(DuckPath);
   const { actions } = useAnimations(animations, group);
-  const navigate = useNavigate(); // React Router navigation hook
+  const navigate = useNavigate(); 
+  const [hovered, setHovered] = useState(false);
 
   useEffect(() => {
     console.log("duck animations: ", actions);
@@ -23,46 +25,44 @@ export function Duck(props) {
   }, [actions]);
 
   const handleDuckClick = () => {
-    // Get the duck's world position
+
     const duckPosition = new THREE.Vector3();
     group.current.getWorldPosition(duckPosition);
 
-    const duckFrontOffset = new THREE.Vector3(-35, 30, -100); // Adjust these values to match the face
+    const duckFrontOffset = new THREE.Vector3(-35, 30, -100); 
     const cameraTarget = duckPosition.clone();
     const cameraPosition = duckPosition.clone().add(duckFrontOffset);
     const targetFOV = 55;
 
-    // Camera movement duration
-    const duration = 8000; // 2 seconds for camera movement
+
+    const duration = 8000; 
     let startTime = null;
 
-    // Animation function for smooth camera movement
+
     const animateCamera = (time) => {
       if (!startTime) startTime = time;
       const elapsedTime = time - startTime;
-      const t = Math.min(elapsedTime / duration, 1); // Normalized time [0, 1]
+      const t = Math.min(elapsedTime / duration, 1); 
 
-      // Interpolate camera position between the current and target position
+
       const newPosition = new THREE.Vector3().lerpVectors(camera.position, cameraPosition, t);
       camera.position.copy(newPosition);
 
-      // Update projection matrix for the camera
       camera.updateProjectionMatrix();
 
       if (t < 1) {
-        requestAnimationFrame(animateCamera); // Continue animation if not done
+        requestAnimationFrame(animateCamera);
       }
     };
 
-    // Start the camera animation
+
     requestAnimationFrame(animateCamera);
 
-    // Animate the zoom (FOV change)
     gsap.to(camera, {
       fov: targetFOV,
       duration: 2.5,
       onUpdate: () => camera.updateProjectionMatrix(),
-      onComplete: () => navigate("/about"), // Navigate once the camera animation is complete
+      onComplete: () => navigate("/about"),
     });
   };
   return (
@@ -72,6 +72,8 @@ export function Duck(props) {
       dispose={null}
       rotation={[0, Math.PI - Math.PI / 2.5, 0]}
       onClick={handleDuckClick} 
+      onPointerOver={() => setHovered(true)}
+      onPointerOut={() => setHovered(false)}
     >
       <group name="Sketchfab_Scene">
         <group name="GLTF_SceneRootNode">
@@ -135,6 +137,21 @@ export function Duck(props) {
             />
           </group>
           <DuckSphere position={[0, 3.0, 0]} groupRef={group} /> 
+          {hovered && (
+                    <Html
+                      position={[0, 4, 0]} // Adjust position as needed
+                      center
+                      style={{
+                        fontSize: '16px',
+                        color: 'white',
+                        padding: '4px 8px',
+                        borderRadius: '15px',
+                        whiteSpace: 'nowrap'
+                      }}
+                    >
+                      About Me
+                    </Html>
+                  )}
         </group>
         <mesh
           name="Object_4"
@@ -151,6 +168,7 @@ export function Duck(props) {
           rotation={[0, 0, 0.223]}
           scale={0.868}
         />
+        
       </group>
     </group>
   );
