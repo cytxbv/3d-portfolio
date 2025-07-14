@@ -4,6 +4,10 @@
 3. open your browser and navigate to http://localhost:3000
 4. you can now interact with the application
 
+1. git add .
+2. git commit -m "initial commit"
+3. git branch
+4. git push -u origin master
 #put all your jsx and gltf components in public files to access
 #example
 #lowpoly_island % npx gltfjsx scene.gltf --transform

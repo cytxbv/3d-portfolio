@@ -7,18 +7,20 @@ const BackButton = () => {
   const navigate = useNavigate(); 
 
   const handleBack = () => {
-    navigate("/"); 
+    console.log('Back button clicked!'); 
+    navigate('/'); 
   };
 
   return (
-    <button className="back-button" onClick={handleBack}>
+    <div className="back-button-wrapper">
       <FaArrowLeft
         className="back-icon"
+        onClick={handleBack} // Click handler directly on the icon
         style={{
           fontSize: "30px",
         }}
       />
-    </button>
+    </div>
   );
 };
 

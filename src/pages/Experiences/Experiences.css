@@ -57,15 +57,15 @@
 .experience-card__columns {
   display: grid;
   grid-template-columns: 1fr 3fr; /* Date range takes 1 fraction, details take 3 fractions */
-  gap: 20px;
+  gap: 120px;
   
 }
 
 .date-range {
   font-size: 0.9rem;
   color: #FFF;
-  margin-bottom: 0.5rem;
-  padding: 50px;
+  margin-bottom: 0rem;
+  padding: 10px;
 }
 
 .details {

@@ -29,7 +29,7 @@ const Projects = () => {
 
   return (
     <div className="projects-container">
-      
+      <BackButton />
       <div className="projects-title">Browse My Recent Projects</div>
       <div className="projects-grid">
         {projectData.map((project, index) => (

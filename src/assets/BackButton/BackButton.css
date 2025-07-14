@@ -1,24 +1,23 @@
-.back-button {
-    position: fixed; 
-    top: 20px; 
-    left: 10px; 
-    background: none;
-    border: none;
-    padding: 5;
-    cursor: pointer;
-    width: 100px; /* Ensure the button only fits the icon */
-    height: 50px; /* Ensure the button only fits the icon */
-    display: flex;
-    align-items:flex-start; /* Centers the icon vertically */
-    justify-content:left; /* Centers the icon horizontally */
-  }
+.back-button-wrapper {
+  position: fixed ;
+  left:0px;
+  top:20px;
+                                                                                    
+
+  padding-left: 50px;
   
-  .back-icon {
-    width: 32px;
-    height: 32px;
-  }
+  width: auto ;
+  height: auto ; 
+  z-index: 99999;
+  margin: 0 ;
+
+}
+
+.back-icon {
+  color: #08edde;
+  transition: all 0.3s ease;
+  padding: 8px; 
+  border-radius: 50%;
   
-  .back-button:hover .back-icon {
-    opacity: 0.8; /* Slight hover effect */
-  }
-  
+}
+

@@ -5,8 +5,9 @@ import BackButton from "../../../src/assets/BackButton/BackButton";
 
 const About = () => {
   return (
+
     <div className="about__center">
-      
+      <BackButton />
       <div className="about__container">
 
         <div className="about__profile-picture">
@@ -29,7 +30,7 @@ const About = () => {
           <div className="about__contact">
 
             <a 
-              href="/Yu_Tung_Chen_2025.pdf" 
+              href="/Yu_Tung_Chen_2025_v4.pdf" 
               target="_blank" 
               rel="noopener noreferrer"
               className="btn btn--outline"
@@ -62,6 +63,8 @@ const About = () => {
         </div>
       </div>
     </div>
+    
+  
   );
 };
 
