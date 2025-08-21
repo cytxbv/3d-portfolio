@@ -9,21 +9,28 @@
   text-align: left;
 }
 .about__center{
-  align-items: center;
-  position: fixed;
+  align-items: center; 
+  position: relative;
+
+
 
 }
 .about__container {
   display: flex;
-  flex-direction: row;
+  flex-direction: row; 
   align-items: center;
-  max-width: 900px;
+
   padding: 25px;
-  gap: 50px;
+  gap: 70px;
   height: 500px;
+
+
 }
 
-
+.about__profile-picture-container {
+  position: relative;
+  z-index: 1;
+}
 .about__profile-picture {
   width: 250px;
   height: 250px;
@@ -33,6 +40,7 @@
   background-position: center;
   border: 1px solid #ccc;
   object-fit: cover; 
+  pointer-events: none;
 }
 
 
@@ -57,6 +65,7 @@
   font-size: 1rem;
   color: #fff;
   line-height: 1.5;
+  width: 550px;
 }
 
 .about__contact{

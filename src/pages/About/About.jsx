@@ -9,10 +9,10 @@ const About = () => {
     <div className="about__center">
       <BackButton />
       <div className="about__container">
-
-        <div className="about__profile-picture">
-        <img src="/portfolio_photo.jpg" alt="Profile" className="about__profile-picture" />
-        </div>
+      
+      <div className="about__profile-picture-container">
+        <img src="/portfolio.jpg" alt="Profile" className="about__profile-picture" />
+      </div>
         
 
 
@@ -20,7 +20,7 @@ const About = () => {
           <h1>
             Hi, I am <span className="about__name">Yu Tung Chen.</span>
           </h1>
-          <h2 className="about__role">A Front End Engineer.</h2>
+          <h2 className="about__role">Software Engineer</h2>
           <p className="about__desc">
             Enthusiastic and motivated learner seeking to expand her knowledge. 
             Eager to contribute through hard work, attention to details and people skills. 
