@@ -56,7 +56,7 @@
 
 .experience-card__columns {
   display: grid;
-  grid-template-columns: 1fr 3fr; /* Date range takes 1 fraction, details take 3 fractions */
+  grid-template-columns: 1fr 3fr; /* Date range takes 1 ratio, details take 3 ratio */
   gap: 120px;
   
 }

@@ -4,9 +4,16 @@ import TrekAlert from "../../../public/trekalert6.png";
 import StreamWave from "../../../public/streamWave4.png";
 import Image2Latex from "../../../public/image2latex2.png";
 import BackButton from "../../../src/assets/BackButton/BackButton";
+import TikMap from "../../../public/tikmap.png";
 
 const Projects = () => {
   const projectData = [
+        {
+      title: "TikMap",
+      imgSrc: TikMap,
+      tags: ["React TypeScript", "GoogleMaps API"],
+      videoDemoLink: "https://youtu.be/cAHTh3CWGYY",
+    },
     {
       title: "TrekAlert",
       imgSrc: TrekAlert, 
